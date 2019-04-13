@@ -1,5 +1,6 @@
 # Projeto-HelpDesk
-Projeto prático de desenvolvimento de um app que permita abertura de chamados de help desk utilizando PHP puro e estruturado.
+
+Projeto prático de desenvolvimento de um app que permita abertura de chamados de help desk utilizando PHP puro, básico/intermediário e estruturado.
 
 ## Como 'instalar' o sistema para testes em minha máquina? 
 *Levando em consideração a utilização do Windows com Xampp instalado para testes em Localhost. 
@@ -8,7 +9,8 @@ Projeto prático de desenvolvimento de um app que permita abertura de chamados d
 2. Coloque a pasta app_help_desk na raíz da pasta Xampp.
 3. Pronto, o sistema já pode ser testado. 
 
-## Você talvez se pergunte, por que uma pasta app_help_desk na raíz do Xampp? 
+## Você talvez se pergunte, por que uma pasta app_help_desk na raíz do Xampp?
+
 Bom, durante o desenvolvimento do projeto a ideia era de se aproximar um pouco mais do mundo real de programação, mesmo se tratando apenas de um conteúdo básico de PHP. Para tal foram criadas duas pastas em localizações diferentes pois a ideia para elas era: 
 
 1.  app_help_desk:
