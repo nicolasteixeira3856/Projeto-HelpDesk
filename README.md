@@ -8,7 +8,7 @@ Projeto prático de desenvolvimento de um app que permita abertura de chamados d
 2. Coloque a pasta app_help_desk na raíz da pasta Xampp.
 3. Pronto, o sistema já pode ser testado. 
 
-##Você talvez se pergunte, por que uma pasta app_help_desk na raíz do Xampp? 
+## Você talvez se pergunte, por que uma pasta app_help_desk na raíz do Xampp? 
 Bom, durante o desenvolvimento do projeto a ideia era de se aproximar um pouco mais do mundo real de programação, mesmo se tratando apenas de um conteúdo básico de PHP. Para tal foram criadas duas pastas em localizações diferentes pois a ideia para elas era: 
 
 1.  app_help_desk
@@ -16,26 +16,26 @@ Bom, durante o desenvolvimento do projeto a ideia era de se aproximar um pouco m
 2.  Projeto-HelpDesk
     - Ser o diretório público da aplicação.
 
-##Logins para teste (também podem ser encontrados no script validar_login.php em hardcode):
+## Logins para teste (também podem ser encontrados no script validar_login.php em hardcode):
 
 1. Admin -> E-mail: adm@teste.com.br Senha: 1234
 1. Usuário -> E-mail: user@teste.com.br Senha: 1234
 1. Maria - Departamento de RH -> E-mail: maria@teste.com.br Senha: 1234
 1. José - Departamento Financeiro -> E-mail: jose@teste.com.br Senha: 1234
 
-##Registros já inclusos para teste:
+## Registros já inclusos para teste:
 
 1. 1#Notebook não liga#Hardware#BSOD, 3 pips curtos.
 2. 4#Problema na conexão no departamento financeiro.#Rede#Windows exibe o alerta 'Conexão Limitada'
 3. 3#Problema na impressora no departamento de RH#Impressora#Imprimindo páginas em branco.
 
-##Regras de negócio do sistema para os utilizadores: 
+## Regras de negócio do sistema para os utilizadores: 
 
 Maria e José, ambos de seus respectivos departamentos, devem poder abrir chamados de TI, sendo que, cada chamado aberto por tais só poderão ser visualizados por eles mesmos ou pelo usuário/admin (Impossibilitando que José veja os chamados de Maria e vice-versa).
 
 Admin e Usuário devem ser capazes de visualizar todos os chamados de TI realizados por qualquer utilizador do sistema.
 
-##Funcionamento do sistema:
+## Funcionamento do sistema:
 
 1. valida_login.php
     - Início de sessão com session_start(),
