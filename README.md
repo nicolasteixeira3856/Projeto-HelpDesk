@@ -44,3 +44,28 @@ Admin e Usuário devem ser capazes de visualizar todos os chamados de TI realiza
     - Resgatando o valor preenchido no formulário de login da página index.php com $_POST ($email e $senha),
     - Utilizando a estrutura foreach para recuperar dados do array $usuarios_app e escrever tais em uma array   $user, realizando a comparação com $email e $senha do $_POST para verificar se a array percorrida         corresponde com as informações fornecidas no formulário.
     - Caso corresponda: $usuario_autenticado = true; $usuario_id = $user['id']; $usuario_perfil_id = $user      ['perfil_id'], encaminhando para um if que chega se $usuario_autenticado == true, caso sim, é iniciada    atribuição para a global $_SESSIOn, passando $_SESSION['login'] = 'true'; $_SESSION['id'] = $usuario_id;  $_SESSION['perfil_id'] = $usuario_perfil_id; e direcionando o usuario a página admin.php. Caso não        corresponda: $usuario_autenticado = false, retornando assim a index.php com uma   mensagem de erro no     formulário
+2. admin.php
+    - Página simples que encaminha para dois scripts diferentes: abrir_chamado.php ->    registra_chamado.php (script) e consultar_chamado.php
+3. abrir_chamado.php -> registra_chamado.php
+    - Formulário simples contendo 3 campos: título, categoria e descrição que            encaminha com método post para registra_chamado.php.
+    - Início de sessão com session_start(),
+    - Variáveis $titulo, $categoria e $descricao que recebem via $_POST seus             respectivos valores
+    - É utilizado um str_replace de # para - caso o usuário utilize # na criação de      chamados, buscando evitar o não funcionamento do sistema.
+    - É aberto um arquivo fopen('../../../app_help_desk/arquivo.bd', 'a') para           inserção dos registros
+    - Logo em seguida é realizada a inserção dos registros de fato fwrite($arquivo,      $chamado);
+    - fclose($arquivo) - importante lembrar de sempre fechar o arquivo após manipular.
+    - Header direcionando o usário novamente a abrir_chamado.php
+4. consultar_chamado.php
+    - Criação de uma variável $chamados como array,
+    - Executado a abertura do arquivo.bd com fopen(),
+    - Utilizado uma estrutura de repetição while com um feof (end of file) com uma       negação, utilizando as variáveis dentro do while $registro = fgets($arquivo);
+      $chamados[] = $registro;
+    - fclose($arquivo) - importante lembrar de sempre fechar o arquivo após manipular.
+    - Na < div class="card-body" > (onde os registros são listados) é utilizado um       foreach $chamados as $chamado, logo em seguida é executado um explode buscando     por '#' (aqui a importância de filtrar tal caso o usuário insira) de $chamado. 
+    - Condição para verificar se a pessoa acessando a página é um usuário, se sim é      executado uma outra condição que possui como parâmetro $_SESSION['id'], essa que   por sua vez ignora os dados que não foram preenchidos pelo usuário da id em        questão.
+    - Realizando um count do array $chamado_dados para verificar a linha vazia do        arquivo.bd e desconsiderar tal.
+    - Impressão dos dados em seus respectivos campos e logo após a finalização da        abertura do php.
+
+## Considerações finais
+
+O desenvolvimento desse projeto foi de grande relavância para mim como desenvolvedor, onde busquei (por opção própria) me limitar de recursos adicionais, optando sempre por funções mais básicas do PHP para algo trivial como criação e leitura de dados, além da proteção de páginas por session, atribuição de niveís e diferentes ID's para cada usuário. 
